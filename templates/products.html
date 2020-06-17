@@ -18,6 +18,13 @@
 							<th>Category</th>
 							<th>Price</th>
 						</tr>
+						{% for item in products %}
+							<tr>
+								<td><i>{{item.name}}</i></td>
+								<td><i>{{item.category}}</i></td>
+								<td><i>{{item.price}}</i></td>
+							</tr>
+						{% endfor %}
 						
 					</table>
 				</div>

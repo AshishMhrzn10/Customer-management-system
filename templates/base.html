@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,45 +8,22 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
     <title>{% block title %}{% endblock title %}</title>
-    <style>
-      
-      #logo{
-      }
-
-      body{
-        background-color: #ebeff5;
-      }
-
-
-      #total-orders{
-        background-color: #4cb4c7;
-      }
-
-
-      #orders-delivered{
-        background-color: #7abecc;
-      }
-
-      #orders-pending{
-        background-color: #7CD1C0;
-      }
-    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <img src={% static 'images/logo.jpg' %} height="45px" width="45px">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Dashboard</a>
+            <a class="nav-link" href="{% url 'home' %}">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
+            <a class="nav-link" href="{% url 'products' %}">Products</a>
           </li>
         </ul>
       </div>
