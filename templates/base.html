@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
     <title>{% block title %}{% endblock title %}</title>
+    {% block style %}{% endblock style %}
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,9 +28,15 @@
           </li>
         </ul>
       </div>
+      
+      <span style="text-transform:uppercase;color:white">Welcome,&nbsp{{request.user}}</span>
+      <span class="ml-3 btn btn-primary"><a href="{% url 'logout' %}" style="color:white">Logout</a></span>
     </nav>
     {% block body %}
     {% endblock body %}
+
+    {% block js %}
+    {% endblock js %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
